@@ -1,0 +1,441 @@
+//! Tournaments Content Styles
+.tournaments {
+  margin-top: 2.5rem;
+  &__content {
+    width: $main-width;
+    margin: 0 auto;
+    &-main {
+      @include Responsive(tabletL) {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+      }
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+    }
+    &-left {
+      @include Responsive(tabletL) {
+        width: 100%;
+      }
+      width: 68%;
+      height: 100%;
+    }
+  }
+
+  //! Tournaments Battle Styles
+
+  &__battle {
+    @include Responsive(phone) {
+      padding: 1.5rem;
+    }
+    width: 100%;
+    background-color: $color-primary;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    flex-direction: column;
+    gap: 5rem;
+    @include centerizeTag(space-between);
+    &-teams {
+      @include centerizeTag(space-between);
+      margin-top: 5rem;
+    }
+    &-flag {
+      @include Responsive(phone) {
+        width: 7rem;
+        height: 7rem;
+      }
+      width: 11rem;
+      height: 11rem;
+      border-radius: 100%;
+
+      @include centerizeTag();
+      box-shadow: 0 0 2rem $color-shadow;
+      &--1 {
+        background-image: conic-gradient(#ff2b28 25%, #e73bf3 0);
+      }
+      &--2 {
+        @include Responsive(phone) {
+          width: 11rem;
+          height: 11rem;
+        }
+        width: 15rem;
+        height: 15rem;
+        background-image: conic-gradient(red 25%, blue 0);
+      }
+      &--3 {
+        background-image: conic-gradient(#eca819 25%, blue 0);
+      }
+    }
+    &-circle {
+      width: 95%;
+      height: 95%;
+      border-radius: 100%;
+      @include centerizeTag();
+      &--1 {
+        background: radial-gradient(
+          circle,
+          #9c091c 0,
+          #e31c3b 50%,
+          #323676 100%
+        );
+      }
+      &--2 {
+        background: radial-gradient(
+          circle,
+          #0658c6 0,
+          #0c678a 50%,
+          #000307 100%
+        );
+      }
+      &--3 {
+        background: radial-gradient(
+          circle,
+          #eca819 0,
+          #eca819 50%,
+          #000307 100%
+        );
+      }
+    }
+    &-img {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+    &-name {
+      color: $color-white;
+      font-weight: bold;
+    }
+    &-count {
+      color: $color-subtitle;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+    &-header {
+    }
+    &-title {
+      color: $color-white;
+      margin-bottom: 0.5rem;
+    }
+    &-subtitle {
+      color: $color-green;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    &-left {
+      width: 100%;
+      height: 100%;
+    }
+    &-right {
+      width: 100%;
+      height: 100%;
+    }
+    &-sward {
+      width: 5rem;
+    }
+    &-progress {
+      width: 100%;
+      height: 1.5rem;
+      background-color: $color-bg;
+      border-radius: 1.5rem;
+      margin-top: 3rem;
+
+      &-percent {
+        width: 70%;
+        background: linear-gradient(
+          120deg,
+          yellow 0%,
+          #e4ec7f 50%,
+          #ffffb7 70%
+        );
+        border-radius: 1.5rem;
+        height: 100%;
+        @include centerizeTag();
+        font-size: $font-size-sm;
+      }
+    }
+    &-thead {
+      width: 100%;
+      height: 3.5rem;
+      @include centerizeTag(space-between);
+
+      &-icon {
+        width: 10%;
+        height: 100%;
+        background-color: $color-secondary;
+        border-radius: 0.5rem;
+        @include centerizeTag();
+        color: $color-white;
+        font-size: $font-size-default;
+      }
+      &-group {
+        width: 75%;
+        height: 100%;
+        background-color: $color-secondary;
+        border-radius: 0.5rem;
+        @include centerizeTag();
+        color: $color-white;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+
+    &-item {
+      @include centerizeTag(space-between);
+      height: 5rem;
+      padding: 1rem 0.8rem;
+      background-color: $color-bg;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+      &.active {
+        background-color: $color-red;
+        .tournaments__battle-number,
+        .tournaments__battle-scores {
+          background-color: $color-red-dark;
+        }
+      }
+      &:hover {
+        background-color: $color-red-light;
+        cursor: pointer;
+        .tournaments__battle-number,
+        .tournaments__battle-scores {
+          background-color: $color-red-dark;
+        }
+      }
+    }
+    &-kings {
+      @include centerizeTag(flex-start);
+      gap: 1rem;
+      height: 100%;
+    }
+    &-rate {
+      @include centerizeTag();
+      gap: 1rem;
+      height: 100%;
+    }
+    &-number,
+    &-scores {
+      width: 3rem;
+      height: 100%;
+      @include centerizeTag();
+      background-color: $color-primary;
+      color: $color-white;
+      border-radius: 0.3rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &-image,
+    &-coins {
+      width: 2.3rem;
+      object-fit: cover;
+    }
+    &-nameteam,
+    &-counts {
+      color: $color-white;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+  //! Tournaments Info Styles
+
+  &__info {
+    &-item {
+      @include Responsive(phoneL) {
+        display: none;
+      }
+      @include centerizeTag(space-between);
+      margin-top: 2rem;
+      background-color: $color-primary;
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    &-game {
+      @include centerizeTag(flex-start);
+      gap: 1rem;
+    }
+    &-image {
+    }
+    &-pic {
+      width: 8rem;
+    }
+    &-description {
+      @include centerizeTag(center, flex-start);
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &-team {
+      color: $color-white;
+      font-weight: bold;
+    }
+    &-count {
+      color: $color-subtitle;
+      font-size: $font-size-sm;
+    }
+    &-name {
+      @include centerizeTag();
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      &::before {
+        content: "";
+        width: 0.2rem;
+        height: 10rem;
+        background-color: $color-subtitle;
+        position: absolute;
+        left: -5rem;
+        transform: rotate(20deg);
+      }
+    }
+    &-key {
+      color: $color-white;
+      font-weight: bold;
+    }
+    &-value {
+      color: $color-subtitle;
+      font-weight: bold;
+    }
+    &-percent {
+      width: 5rem;
+    }
+    &-bg1 {
+      width: 15rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+      background: linear-gradient(
+        111deg,
+        $color-purple-dark 0,
+        $color-purple-dark 30%,
+        $color-purple 30%,
+        $color-purple 100%
+      );
+      @include centerizeTag();
+      color: $color-white;
+      font-weight: bold;
+      font-size: $font-size-title;
+      font-family: $Font-Rubik;
+      &.bg2 {
+        background: linear-gradient(
+          111deg,
+          $color-secondary 0,
+          $color-secondary 30%,
+          $color-secondary-light 30%,
+          $color-secondary-light 100%
+        );
+      }
+    }
+    &-more {
+      width: 100%;
+      background-color: $color-secondary;
+      padding: 2rem 0;
+      @include centerizeTag();
+      color: $color-white;
+      font-weight: bold;
+      font-size: $font-size-default;
+      margin-top: 1rem;
+      border-radius: 1rem;
+    }
+  }
+
+  //! Tournaments Clothing Styles
+
+  &__clothing {
+    @include Responsive(tabletL) {
+      width: 80%;
+    }
+    @include Responsive(phoneL) {
+      width: 100%;
+    }
+
+    width: 30%;
+    background-color: $color-primary;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    &-title {
+      color: $color-white;
+      margin-bottom: 1rem;
+      line-height: 3.5rem;
+    }
+    &-subtitle {
+      color: $color-green;
+      font-weight: bold;
+      font-size: $font-size-default;
+    }
+    &-items {
+      margin-top: 3rem;
+    }
+    &-item {
+      margin-bottom: 3.5rem;
+    }
+
+    &-teams {
+      @include centerizeTag(space-between);
+    }
+    &-team {
+      @include centerizeTag();
+      flex-direction: column;
+    }
+    &-names {
+      @include centerizeTag();
+      flex-direction: column;
+      margin-top: 2.5rem;
+    }
+    &-name {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $color-white;
+      margin-bottom: 0.5rem;
+    }
+    &-number {
+      font-weight: bold;
+      color: $color-subtitle;
+      font-size: 1.4rem;
+    }
+    &-score {
+      span {
+        font-size: 2.3rem;
+        font-weight: bold;
+        color: $color-white;
+        font-family: $Font-Rubik;
+        letter-spacing: 0.4rem;
+      }
+    }
+    &-link {
+      width: 100%;
+      padding: 1.5rem 0;
+      background: linear-gradient(
+        to right,
+        #bf953f,
+        #fcf6ba,
+        #b38728,
+        #fbf5b7,
+        #aa771c
+      );
+      @include centerizeTag();
+      font-weight: bold;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+      &:hover {
+        background: linear-gradient(to right, #facd7b, #fceabb, #e0bd7c);
+        cursor: pointer;
+        letter-spacing: 0.4rem;
+      }
+    }
+  }
+}

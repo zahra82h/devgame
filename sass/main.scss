@@ -1,0 +1,30 @@
+//! Utilities Directory
+@import "utilities/variables";
+@import "utilities/mixins.scss";
+@import "utilities/functions";
+
+//! Base Directory
+@import "base/reset";
+@import "base/typography";
+@import "base/default";
+
+//! Vendores Directory
+
+//! Themes Directory
+
+//! Layouts Directory
+@import "layouts/sidebar";
+@import "layouts/header";
+@import "layouts/slider";
+@import "layouts/popular";
+@import "layouts/best";
+@import "layouts/tournaments";
+@import "layouts/streams";
+@import "layouts/footer";
+@import "layouts/devgame";
+
+//! Components Directory
+@import "components/devTitle";
+
+//! Pages Directory
+@import "pages/home";

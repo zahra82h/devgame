@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  @include Responsive(phone) {
+    font-size: 43.75%;
+  }
+  @include Responsive(phoneL) {
+    font-size: 50%;
+  }
+  @include Responsive(tablet) {
+    font-size: 56.25%;
+  }
+  @include Responsive(tabletL) {
+    font-size: 57%;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background-color: $color-bg;
+  font-family: $Font-Poppins;
+  font-weight: 500;
+}

@@ -1,0 +1,5 @@
+.devgame {
+  @include Responsive(tablet) {
+    width: 100% !important;
+  }
+}

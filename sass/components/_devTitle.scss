@@ -1,0 +1,39 @@
+.dev-title {
+  @include Responsive(phoneL) {
+    flex-direction: column;
+  }
+  @include centerizeTag(space-between);
+
+  &__list {
+    @include Responsive(phone) {
+      display: none;
+    }
+    @include centerizeTag();
+    gap: 2.5rem;
+  }
+  &__item {
+    font-size: $font-size-default;
+    color: $color-white;
+    font-weight: bold;
+    padding-top: 1rem;
+    &.active {
+      color: $color-secondary;
+      border-top: 0.2rem solid $color-secondary;
+    }
+  }
+  &__btns {
+    @include centerizeTag();
+    gap: 1rem;
+  }
+  &__btn {
+    width: 4rem;
+    height: 4rem;
+    color: $color-white;
+    @include centerizeTag();
+    border-radius: 0.6rem;
+
+    &.active {
+      background-color: $color-secondary;
+    }
+  }
+}
